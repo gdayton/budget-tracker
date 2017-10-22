@@ -1,0 +1,25 @@
+#wrapper{
+    width:100%;
+    height:100%;
+    /* background-color:gray; */
+    /* padding:10px; */
+    margin:30px 20px;
+}
+#left{
+    text-align: left;
+}#left h1{
+    font-size: 80px;
+}
+#right{
+    text-align: right;
+}#right h1{
+    font-size: 80px;
+}
+.label{
+    color:#c0c1c2;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.amount-spent{
+    color:#34cf72;
+}
