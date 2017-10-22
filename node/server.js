@@ -8,67 +8,61 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 81;        // set our port
 
-// ROUTES FOR OUR API
-// =============================================================================
-var router = express.Router();              // get an instance of the express Router
-
-router.use(function(req, res, next) {
-    // do logging
-    // console.log('Something is happening.');
-    next(); // make sure we go to the next routes and don't stop here
+// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+app.get('/debt', function(req, res) {
+    var id = req.param("id");
+    if(id){
+        ss.getDebt(id, function(resl){
+            res.status(200).json(resl);
+        });
+    }else{
+        res.status(404).json({message:"ID needs to be passed."});
+    }
 });
 
-// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-app.get('/glenn', function(req, res) {
-    ss.getDebtForGlenn(function(resl){
+app.get('/conf', function(req, res) {
+    var id = req.param("id");
+    if(id){
+        ss.getConf(id, function(resl){
+            res.status(200).json(resl);
+        });
+    }else{
+        res.status(404).json({message:"ID needs to be passed."});
+    }   
+});
+
+app.get('/values', function(req, res) {
+    var id = req.param('id');
+    if(id){
+        ss.getValues(id, function(resl){
+            res.status(200).json(resl);
+        });
+    }else{
+        res.status(404).json({message:"ID needs to be passed."});
+    }   
+});
+
+app.get('/currentday', function(req, res){
+    ss.getCurrentDay(function(resl){
         res.status(200).json(resl);
     });
 });
 
-app.get('/jose', function(req, res) {
-    ss.getDebtForJose(function(resl){
+app.post("/li", function(req, res){
+    var lineitem = {
+        id: req.body.id,
+        amount: req.body.amount,
+        description: req.body.description,
+        category: req.body.category
+    }
+    
+    ss.postLineItem(lineitem, function(resl){
         res.status(200).json(resl);
-    });   
+    });
 });
 
 app.get('/', function(req, res) {
     res.status(200).json({ message: 'works' });   
 });
 
-
-// more routes for our API will happen here
-
-// REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
-//app.use('/api', router);
-
-// START THE SERVER
-// =============================================================================
 app.listen(port);
-
-
-
-/*
-GET
-========
-app.get('/api/users', function(req, res) {
-    var user_id = req.param('id');
-    var token = req.param('token');
-    var geo = req.param('geo');  
-  
-    res.send(user_id + ' ' + token + ' ' + geo);
-  });
-*/
-
-
-/*
-POST
-========
-app.post('/api/users', function(req, res) {
-    var user_id = req.body.id;
-    var token = req.body.token;
-    var geo = req.body.geo;
-
-    res.send(user_id + ' ' + token + ' ' + geo);
-});
-*/
