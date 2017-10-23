@@ -7,19 +7,79 @@
 }
 #left{
     text-align: left;
+    margin-left: -50px;
 }#left h1{
-    font-size: 80px;
+    font-size: 190px;
 }
 #right{
     text-align: right;
+    margin-left:-25px;
+    position: relative;
+    left:85px;
 }#right h1{
-    font-size: 80px;
+    font-size: 190px;
 }
 .label{
     color:#c0c1c2;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 20px;
 }
-.amount-spent{
+.green{
     color:#34cf72;
+}
+.red{
+    color:#d1242c;
+}
+.gray{
+    color:#c0c1c2;
+}
+.red-dot{
+    border-radius: 50%;
+	width: 30px;
+    height: 30px;
+    background-color:#d1242c;
+}
+.green-dot{
+    border-radius: 50%;
+	width: 30px;
+    height: 30px;
+    background-color:#34cf72;
+}
+.currentday h1{
+    text-transform: uppercase;
+    font-weight:1000;
+    background-color:white;
+    padding:10px;
+    font-size:40px;
+    text-align: center;
+}
+.currentday p{
+    text-align:center;
+    color:#c0c1c2;
+}
+.budget-nums{
+    font-size:85px;
+}
+.last_purchase h2{
+    color:#c0c1c2;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.last_purchase .amt{
+    color:#34cf72;
+    font-size: 60px;
+}
+.last_purchase .categ{
+    color:white;
+    text-transform: uppercase;
+}
+.cat{
+    font-size:70px;
+}
+.cat img{
+    width:60px;
+    height:60px;
+    position: relative;
+    fill: #c0c1c2;
+    bottom:7px;
 }

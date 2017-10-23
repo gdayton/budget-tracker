@@ -1,13 +1,47 @@
 <div id="wrapper">
   <div class="container">
     <div class="row">
-      <div id="left" class="col-sm-6 col-md-6 col-lg-6">
-        <h3 class="label">This Month</h3>
-        <h1 class="amount-spent">$400 / $2,000</h1>
+      <div id="left" class="col-sm-5 col-md-5 col-lg-5">
+        <h3 class="label" style="margin-left:-15px;">This Month</h3>
+        <h1 class="green">{{ glennValues?.remaining }}</h1>
+        <h2 class="red budget-nums">{{ glennValues?.expense }}/<span style="font-size:40px;">{{ glennConf?.budget }}</span></h2>
+        <br /><br />
+        <h3 class="label" style="margin-left:-15px;">Previous Activity ({{ glennDebt[0]?.category }})</h3>
+        <br /><br />
+        <div class="last_purchase" style="margin-left:5px;">
+          <h2><span class="amt">{{ glennDebt[0]?.amount }}</span> {{ glennDebt[0]?.description }}</h2>
+        </div>
+        <br /><br />
+        <h3 class="label" style="margin-left:-10px;">Categories</h3>
+        <br /><br />
+        <h2 class="red cat"><img src="/assets/img/ic_school_white_24px.svg" class="gray"/> {{ glennValues?.studentloans }}</h2>
+        <h2 class="red cat"><img src="/assets/img/ic_credit_card_white_24px.svg" class="gray"/> {{ glennValues?.bigpurchases }}</h2>
+        <h2 class="gray cat"><img src="/assets/img/ic_show_chart_white_24px.svg" /> {{ glennValues?.investments }}</h2>
+        <h2 class="gray cat"><img src="/assets/img/ic_monetization_on_white_24px.svg" /> {{ glennValues?.savings }}</h2>
       </div>
-      <div id="right" class="col-sm-6 col-md-6 col-lg-6">
-        <h3 class="label">This Month</h3>
-        <h1 class="amount-spent">$900 / $4,000</h1>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <div class="currentday" style="margin-top:450px;">
+          <h1><strong>Day {{ currentDay?.currentday }}</strong></h1>
+          <p>{{ counter }}</p>
+        </div>
+      </div>
+      <div id="right" class="col-sm-5 col-md-5 col-lg-5">
+        <h3 class="label" style="margin-right:-15px;">This Month</h3>
+        <h1 class="green">{{ joseValues?.remaining }}</h1>
+        <h2 class="red budget-nums">{{ joseValues?.expense }}/<span style="font-size:40px;">{{ joseConf?.budget }}</span></h2>
+        <br /><br />
+        <h3 class="label" style="margin-right:-15px;">Previous Activity ({{ joseDebt[0]?.category }})</h3>
+        <br /><br />
+        <div class="last_purchase">
+          <h2><span class="amt">{{ joseDebt[0]?.amount }}</span> {{ joseDebt[0]?.description }}</h2>
+        </div>
+        <br /><br />
+        <h3 class="label" style="margin-right:-15px;">Categories</h3>
+        <br /><br />
+        <h2 class="red cat">{{ joseValues?.studentloans }} <img src="/assets/img/ic_school_white_24px.svg" class="gray"/></h2>
+        <h2 class="red cat">{{ joseValues?.bigpurchases }} <img src="/assets/img/ic_credit_card_white_24px.svg" class="gray"/></h2>
+        <h2 class="gray cat">{{ joseValues?.investments }} <img src="/assets/img/ic_show_chart_white_24px.svg" /></h2>
+        <h2 class="gray cat">{{ joseValues?.savings }} <img src="/assets/img/ic_monetization_on_white_24px.svg" /></h2>
       </div>
     </div>
   </div>

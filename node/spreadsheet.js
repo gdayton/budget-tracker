@@ -59,7 +59,9 @@ function getValues(person, res){
             savings: rows[0].savings,
             bigpurchases: rows[0].bigpurchases,
             expense: rows[0].expense,
-            budgetpercent: rows[0].budgetpercent
+            budgetpercent: rows[0].budgetpercent,
+            remaining: rows[0].remaining,
+            dailybudgetpercent: rows[0].dailybudgetpercent
         });
     });
 }
