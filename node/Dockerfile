@@ -13,4 +13,5 @@ RUN npm install nodemon -g
 
 EXPOSE 81
 
+#ENTRYPOINT ["npm", "start"]
 ENTRYPOINT ["npm", "run", "dev"]

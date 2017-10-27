@@ -7,10 +7,12 @@ services:
     links:
     - node
     volumes:
+    #- "/root/budget-tracker/ng2/dist:/usr/local/nginx/html"
     - "/Users/gdayton/Documents/budget-tracker/ng2/dist:/usr/local/nginx/html"
   node:
     build: ./node
     ports:
     - "81:81"
     volumes:
+    #- "/root/budget-tracker/node:/src"
     - "/Users/gdayton/Documents/budget-tracker/node:/src"
